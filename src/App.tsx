@@ -2,14 +2,14 @@ import {
   IxApplication,
   IxApplicationHeader,
   IxContent,
-  IxContentHeader,
   IxMenu,
   IxMenuItem,
-} from '@siemens/ix-react';
+} from "@siemens/ix-react";
+import { Outlet } from "react-router";
 
 export default () => {
   return (
-    <IxApplication class='w-screen h-screen'>
+    <IxApplication class="w-screen h-screen">
       <IxApplicationHeader name="My Application">
         <div className="placeholder-logo" slot="logo"></div>
       </IxApplicationHeader>
@@ -19,10 +19,7 @@ export default () => {
       </IxMenu>
 
       <IxContent>
-        <IxContentHeader
-          slot="header"
-          header-title="My Content Page"
-        ></IxContentHeader>
+        <Outlet />
       </IxContent>
     </IxApplication>
   );
